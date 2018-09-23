@@ -6,16 +6,11 @@ module.exports = function getLoveTrianglesCount(preferences = []) {
 
     // your implementation
     test = preferences;
-    var trianglesCount = 0;
-    test.sort(function (a, b) {
-        return a - b;
-        for (var i = 0; i < test.length; i++) {
-            if ((test[i + 1] - test[i] == 1) && test[i + 2] == i + 1) {
-                trianglesCount++;
-            } else {
-                continue;
-            }
+    count = 0;
+    for (var i = 0; i < test.length; i++) {
+        if ((test[test[test[i] - 1] - 1] - 1 == i) && (test[i] != test[test[i] - 1]) && (test[test[test[i] - 1] - 1] != test[test[i] - 1])) {
+            count++;
         }
-    })
-    return (trianglesCount);
-}
+    }
+    return (count / 3);
+};
