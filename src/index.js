@@ -3,21 +3,19 @@
  * @returns number of love triangles
  */
 module.exports = function getLoveTrianglesCount(preferences = []) {
+
     // your implementation
     test = preferences;
-    if (test.length % 13 != 0) {
-        return 0;
-    }
+    var trianglesCount = 0;
     test.sort(function (a, b) {
         return a - b;
-    });
-    var trianglesCount = 0;
-    for (var i = 0; i < test.length; i++) {
-        if ((test[i + 1] - test[i] == 1) && test[i + 2] == i + 1) {
-            trianglesCount++;
-        } else {
-            continue;
-            return (trianglesCount);
+        for (var i = 0; i < test.length; i++) {
+            if ((test[i + 1] - test[i] == 1) && test[i + 2] == i + 1) {
+                trianglesCount++;
+            } else {
+                continue;
+            }
         }
-    }
-};
+    })
+    return (trianglesCount);
+}
